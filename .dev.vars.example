@@ -1,0 +1,2 @@
+# Copy to .dev.vars for local dev. In production set API_TOKEN as a secret in Cloudflare.
+API_TOKEN=change-me

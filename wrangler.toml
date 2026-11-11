@@ -1,0 +1,13 @@
+name = "line-two"
+pages_build_output_dir = "public"
+compatibility_date = "2025-01-01"
+
+# Audio, voice clips and notes all live in one R2 bucket.
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "line-two"
+
+# Speech-to-text for voice notes (Workers AI Whisper).
+# Remove this block to run without transcription: notes keep their voice clip.
+[ai]
+binding = "AI"

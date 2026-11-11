@@ -1,0 +1,16 @@
+{
+  "name": "line-two",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Line 2 - speak timestamped notes while you listen. Note mode v1.",
+  "scripts": {
+    "dev": "wrangler pages dev",
+    "typecheck": "tsc --noEmit",
+    "deploy": "wrangler pages deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5",
+    "typescript": "^5",
+    "wrangler": "^4"
+  }
+}
