@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Line 2</title>
+  <meta name="theme-color" content="#14161a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Line 2">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <span class="brand">☎ Line 2</span>
+    <span id="mode" class="mode"></span>
+  </header>
+
+  <main>
+    <!-- Home: pick something to listen to -->
+    <section id="home">
+      <div id="latest"></div>
+      <ul id="episodes" class="episodes"></ul>
+
+      <div class="open">
+        <label class="btn wide">
+          Open an audio file
+          <input id="file" type="file" accept="audio/*,.mp3,.m4a,.wav" hidden>
+        </label>
+        <form id="urlform" class="row">
+          <input id="url" type="url" inputmode="url" placeholder="or paste a link to an mp3">
+          <button class="btn" type="submit">Load</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Player: listen and raise your hand -->
+    <section id="player" hidden>
+      <button id="back" class="link">‹ All episodes</button>
+      <h1 id="title"></h1>
+
+      <audio id="audio" preload="metadata" playsinline></audio>
+      <input id="seek" type="range" min="0" max="0" step="1" value="0" aria-label="Position">
+      <div class="times"><span id="cur">0:00</span><span id="dur">0:00</span></div>
+
+      <div class="transport">
+        <button id="rew" class="btn" aria-label="Back 15 seconds">−15</button>
+        <button id="play" class="btn play" aria-label="Play">▶</button>
+        <button id="fwd" class="btn" aria-label="Forward 15 seconds">+15</button>
+        <button id="speed" class="btn" aria-label="Playback speed">1×</button>
+      </div>
+
+      <button id="hand" class="hand">
+        <span id="handLabel">✋ Raise hand</span>
+        <span id="handHint" class="hint">Tap once, talk, stop talking. The show resumes itself.</span>
+        <span class="meter"><span id="level"></span></span>
+      </button>
+      <button id="marker" class="btn wide">Drop a marker (no voice)</button>
+
+      <h2>Notes <span id="count" class="count"></span></h2>
+      <ol id="notes" class="notes"></ol>
+
+      <div class="export">
+        <button id="copy" class="btn">Copy notes</button>
+        <button id="download" class="btn">Download .md</button>
+        <button id="reviewed" class="btn" hidden>Finish review</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
